@@ -1,15 +1,17 @@
-import React from 'react'
-import styled from 'styled-components';
-import tw from 'twin.macro';
-import Navbar from '../../components/Navbar';
-import BackGroundImage from '../../images/cover.jpg'
- 
+import React from "react";
+import { Link } from "react-scroll";
+import styled from "styled-components";
+import tw from "twin.macro";
+import Navbar from "../../components/Navbar";
+import BackGroundImage from "../../images/cover.jpg";
+import { BsArrowDownCircle } from "react-icons/bs";
+
 const TopSection = () => {
-    return (
-        <TopSectionContainer>
-            <LandingSection>
-            <Navbar/>
-            <InfoSection>
+  return (
+    <TopSectionContainer>
+      <LandingSection>
+        <Navbar />
+        <InfoSection>
           <FloatingText>WORLD</FloatingText>
           <FloatingText style={{ display: "inline-flex" }}>
             OF
@@ -19,15 +21,22 @@ const TopSection = () => {
           </FloatingText>
           <FloatingText>Sri Lanka.</FloatingText>
           <DescriptionText>
-            Sri Lanka is also a land of staggering contrast and spectacular beauty due to its compactness.Along the coast, visitors can explore amazing beaches, safari tours, guided walks through ancient cities.
+            Sri Lanka is also a land of staggering contrast and spectacular
+            beauty due to its compactness.Along the coast, visitors can explore
+            amazing beaches, safari tours, guided walks through ancient cities.
           </DescriptionText>
         </InfoSection>
-            </LandingSection>
-        </TopSectionContainer>
-    )
-}
+        <ViewMoreButton>
+          <Link to="Explore" smooth={"easeInOutQuad"} duration={1500}>
+            <BsArrowDownCircle />
+          </Link>
+        </ViewMoreButton>
+      </LandingSection>
+    </TopSectionContainer>
+  );
+};
 
-export default TopSection
+export default TopSection;
 
 const TopSectionContainer = styled.div`
   ${tw`
@@ -39,25 +48,23 @@ relative
 `}
 `;
 
-
 const LandingSection = styled.div`
-${tw`
+  ${tw`
  w-full
  h-screen
  flex
  flex-col
 `}
 
-background-image: url(${BackGroundImage}),
+  background-image: url(${BackGroundImage}),
 linear-gradient(to left, #005b9c, #b1d1b148);
-background-size: cover;
-background-position: bottom 10% left;
-background-blend-mode: overlay;
-`
-
+  background-size: cover;
+  background-position: bottom 10% left;
+  background-blend-mode: overlay;
+`;
 
 const InfoSection = styled.div`
-${tw`
+  ${tw`
  absolute
  top[150px]
  left-3
@@ -68,10 +75,10 @@ ${tw`
  2xl:top[240px]
  2xl:left-auto
 `}
-`
+`;
 
 const FloatingText = styled.h1`
-${tw`
+  ${tw`
 m-0
 font-black
 text-white
@@ -85,7 +92,7 @@ font-family["Archivo Narrow"]
 flex
 items-center
 `}
-`
+`;
 
 const OutlinedTextSvg = styled.svg`
   font: bold 100px Century "Archivo Narrow", Arial;
