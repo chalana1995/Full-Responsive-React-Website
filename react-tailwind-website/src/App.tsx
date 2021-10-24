@@ -4,12 +4,14 @@ import "./App.css";
 import tw from "twin.macro";
 import TopSection from "./containers/TopSection";
 import ExploreSection from "./containers/ExpolreSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <AppContainer>
       <TopSection />
       <ExploreSection />
+      <Footer />
     </AppContainer>
   );
 }
